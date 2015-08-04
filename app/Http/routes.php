@@ -10,6 +10,33 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('auth/login', [
+        'as' => 'login',
+        'uses' => 'Auth\AuthController@getLogin'
+    ]
+);
+Route::post('auth/login', [
+        'as' => 'postlogin',
+        'uses' => 'Auth\AuthController@postLogin'
+    ]
+);
+Route::get('auth/logout', [
+        'as' => 'logout',
+        'uses' => 'Auth\AuthController@getLogout'
+    ]
+);
+
+// Registration routes...
+Route::get('auth/register', [
+        'as' => 'register',
+        'uses' => 'Auth\AuthController@getRegister'
+    ]
+);
+Route::post('auth/register', [
+        'as' => 'postregister',
+        'uses' => 'Auth\AuthController@postRegister'
+    ]
+);
 
 Route::get('/', [
     'as'=>'listLink',

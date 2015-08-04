@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Links;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,6 +13,10 @@ use Illuminate\Support\Str;
 
 class LinkController extends Controller
 {
+    public function __construct(Guard $auth)
+    {
+        $this->middleware('auth');
+    }
     public function listLink()
     {
         //$links = Links::paginate(3);

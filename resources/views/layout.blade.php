@@ -27,6 +27,10 @@
             <ul class="nav navbar-nav">
               <li><a href="{{ route('listLink') }}">List Links</a></li>
               <li><a href="{{ route('addLink') }}">Add Link</a></li>
+              <li><a href="{{ route('register') }}">Register</a></li>
+              @if( Auth::check() )
+                <li><a href="{{ route('logout') }}">Logout</a></li>
+              @endif
             </ul>
           </nav>
         </header>
