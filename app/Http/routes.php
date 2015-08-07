@@ -25,8 +25,6 @@ Route::get('auth/logout', [
         'uses' => 'Auth\AuthController@getLogout'
     ]
 );
-
-// Registration routes...
 Route::get('auth/register', [
         'as' => 'register',
         'uses' => 'Auth\AuthController@getRegister'
